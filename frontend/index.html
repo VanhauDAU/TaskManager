@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Dự Án DevOps Giữa Kỳ</p>
+          <h1>Task Manager</h1>
+          <p class="hero-copy">
+            Quản lý công việc đơn giản với frontend, backend và PostgreSQL.
+          </p>
+        </div>
+        <a class="ghost-link" href="/about">Xem trang thông tin cá nhân</a>
+      </header>
+
+      <main class="content-grid">
+        <section class="card">
+          <div class="section-heading">
+            <h2>Tạo task mới</h2>
+            <p>Nhập thông tin công việc và lưu vào database.</p>
+          </div>
+
+          <form id="task-form" class="task-form">
+            <label>
+              Tiêu đề
+              <input id="title" name="title" type="text" placeholder="Ví dụ: Hoàn thành báo cáo" required />
+            </label>
+
+            <label>
+              Mô tả
+              <textarea
+                id="description"
+                name="description"
+                rows="4"
+                placeholder="Mô tả ngắn gọn công việc cần làm"
+              ></textarea>
+            </label>
+
+            <button type="submit">Thêm task</button>
+          </form>
+
+          <p id="form-message" class="message" role="status"></p>
+        </section>
+
+        <section class="card">
+          <div class="section-heading">
+            <h2>Danh sách task</h2>
+            <p>Dữ liệu được lấy trực tiếp từ backend.</p>
+          </div>
+
+          <button id="refresh-btn" class="secondary-button" type="button">Tải lại danh sách</button>
+          <div id="tasks" class="task-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
